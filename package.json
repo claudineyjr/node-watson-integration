@@ -19,8 +19,11 @@
   "author": "Claudiney Junior <claudiney.jr@caquicoders.com.br>",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "consign": "^0.1.6",
     "express": "^4.16.2",
     "nodemon": "^1.12.1",
-    "twit": "^2.2.9"
+    "twit": "^2.2.9",
+    "watson-developer-cloud": "^2.41.1"
   }
 }
