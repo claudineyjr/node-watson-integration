@@ -1,0 +1,20 @@
+{
+  "name": "node-watson-integration",
+  "version": "1.0.0",
+  "description": "Uma aplicação em Node.js que integra à API do Watson",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node.js",
+    "Watson",
+    "analise",
+    "cognitive"
+  ],
+  "author": "Claudiney Junior <claudiney.jr@caquicoders.com.br>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
