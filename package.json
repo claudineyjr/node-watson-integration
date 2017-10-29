@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudineyjr/node-watson-integration"
+  },
   "keywords": [
     "Node.js",
     "Watson",
@@ -16,6 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
+    "nodemon": "^1.12.1",
     "twit": "^2.2.9"
   }
 }
