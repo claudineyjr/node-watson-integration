@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <% include ./modulos/head %>
+</head>
+
+<body class="container">
+
+<header>
+    <% include ./modulos/header %>
+</header>
+
+<main>
+    <div class="col-md-12 main-div">
+        <form class="information-input" method="POST" action"/translator">
+            <div class="form-group">
+              <label for="textToTranslate">Watson Translator</label>
+              <input type="text" class="form-control" id="textToTranslate" name="textToTranslate" placeholder="Digite o texto a traduzir">
+              <small id="emailHelp" class="form-text text-muted">O humor do texto será traduzido.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Traduzir</button>
+        </form>
+
+        <% if(resposta.length > 0) { %>
+            <% for(var i = 0; i < resposta.length; i++) { %>
+                <h3><p class="result-label">TRADUÇÃO:</p> <p class="result-data"><%=resposta[i].translation%></p></h3>
+            <% } %>
+        <% } %>
+    </div>
+</main>
+
+<footer>
+    
+</footer>
+</body>
+</html>

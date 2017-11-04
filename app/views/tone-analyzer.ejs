@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <% include ./modulos/head %>
+</head>
+
+<body class="container">
+
+<header>
+    <% include ./modulos/header %>
+</header>
+
+<main>
+    <div class="col-md-12 main-div">
+        <form class="information-input" method="POST" action"/tone-analyzer">
+            <div class="form-group">
+              <label for="textToAnalyze">Tone Analyzer</label>
+              <input type="text" class="form-control" id="textToAnalyze" name="textToAnalyze" placeholder="Digite o texto a analizar">
+              <small id="emailHelp" class="form-text text-muted">O humor do texto será analizado.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Analizar</button>
+        </form>
+
+        <% if(resposta.length > 0) { %>
+            <% for(var i = 0; i < resposta.length; i++) { %>
+                <h3><span class="result-label">Tom:</span> <span class="result-data"><%=resposta[i].tone_name%></span> <span class="result-label">Score:</span> <span class="result-data"><%=resposta[i].score%></span></h3>
+            <% } %>
+        <% } %>
+    </div>
+</main>
+
+<footer>
+    
+</footer>
+</body>
+</html>

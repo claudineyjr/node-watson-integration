@@ -6,13 +6,7 @@ var bodyParser = require('body-parser');
 
 var consign = require('consign');
 
-var Twit = require('twit');
-
 var watson = require('watson-developer-cloud');
-
-var twitterAccess = require('./twitter-access');
-
-var watsonAccess = require('./watson-access');
 
 app.use(bodyParser.urlencoded({
   extended: true,
@@ -25,10 +19,13 @@ app.use(bodyParser.json({
 app.set('view engine', 'ejs');
 app.set('views', './app/views');
 
+app.use(express.static('./app/public'));
+
 
 
 consign()
   .include('./app/routes')
+  .then('./app/controllers')
   .into(app);
 
-  module.exports = { app, Twit, watson, twitterAccess, watsonAccess };
+  module.exports = { app };

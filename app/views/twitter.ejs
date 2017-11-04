@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <% include ./modulos/head %>
+</head>
+
+<body class="container">
+
+<header>
+    <% include ./modulos/header %>
+</header>
+
+<main>
+    <div class="col-md-12 main-div">
+        <form class="information-input" method="POST" action"/twitter-post">
+            <div class="form-group">
+              <label for="textToPost">Postar um tweet</label>
+              <input type="text" class="form-control" id="textToPost" name="textToPost" placeholder="Digite o texto a postar">
+              <small id="emailHelp" class="form-text text-muted">O que quer postar em seu twitter?</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Postar</button>
+        </form>
+        <% if(resposta.success != undefined) { %>
+          <div class="alert alert-info">
+            <ul>
+              <li><%=resposta.success.msg%></li>
+            </ul>
+          </div>
+        <% } %>
+        <% if(resposta.erro > 0) { %>
+          <div class="alert alert-danger">
+            <strong>Atenção!</strong>
+            <ul>
+              <%=resposta.erro.msg%>
+            </ul>
+          </div>
+        <% } %>
+
+        <% if(resposta.length > 0) { %>
+            <% for(var i = 0; i < resposta.length; i++) { %>
+                <h3><span class="result-label">Tom:</span> <span class="result-data"><%=resposta[i].tone_name%></span> <span class="result-label">Score:</span> <span class="result-data"><%=resposta[i].score%></span></h3>
+            <% } %>
+        <% } %>
+    </div>
+</main>
+
+<footer>
+    
+</footer>
+</body>
+</html>
