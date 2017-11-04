@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <% include ./modulos/head %>
+</head>
+
+<body class="container">
+
+<header>
+    <% include ./modulos/header %>
+</header>
+
+<main>
+    <div class="col-md-12 main-div">
+        <form class="information-input" method="POST" action"/tone-twitter">
+          <div class="form-group">
+            <input type="hidden" value="listar" name="acao">
+            <label for="tweetsToAnalyze">Analizar Tweets</label>
+            <input type="text" class="form-control" id="tweetsToAnalyze" name="tweetsToAnalyze" placeholder="Digite o texto a Analizar no Twitter">
+            <small id="emailHelp" class="form-text text-muted">O que quer analizar no twitter?</small>
+          </div>
+          <button type="submit" class="btn btn-primary">Buscar</button>
+      </form>
+    </div>
+
+    <% if(resposta.length > 0) { %>
+        <% for(var i = 0; i < resposta.length; i++) { %>
+            <h3><span class="result-label">Tom:</span> <span class="result-data"><%=resposta[i].tone_name%></span> <span class="result-label">Score:</span> <span class="result-data"><%=resposta[i].score * 100%>%</span></h3>
+        <% } %>
+    <% } %>
+</main>
+
+<footer>
+    
+</footer>
+</body>
+</html>

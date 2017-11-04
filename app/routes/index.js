@@ -8,7 +8,7 @@ module.exports = function(application, req, res){
   });
   
   application.post('/tone-analyzer', (req, res)=>{
-    application.app.controllers.toneAnalyzer.analize(application, req, res);
+    application.app.controllers.toneAnalyzer.analyze(application, req, res);
   });
 
   application.get('/translator', (req, res) =>{
@@ -30,6 +30,13 @@ module.exports = function(application, req, res){
     } else if(req.body.acao == 'listar'){
       application.app.controllers.twitter.listar(application, req, res);
     }
-    
+  });
+
+  application.get('/tone-twitter', (req, res)=>{
+    application.app.controllers.integration.index(application, req, res);
+  });
+
+  application.post('/tone-twitter', (req, res)=>{
+    application.app.controllers.integration.analyze(application, req, res);
   });
 };

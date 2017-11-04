@@ -3,4 +3,4 @@ module.exports = {
   "username": "",
   "password": "",
   "version": "v2"
-}
+  }
