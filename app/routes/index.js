@@ -24,6 +24,12 @@ module.exports = function(application, req, res){
   });
 
   application.post('/twitter', (req, res)=>{
-    application.app.controllers.twitter.postar(application, req, res);
-  })
+    console.log(req.body)
+    if(req.body.acao == 'postar'){
+      application.app.controllers.twitter.postar(application, req, res);
+    } else if(req.body.acao == 'listar'){
+      application.app.controllers.twitter.listar(application, req, res);
+    }
+    
+  });
 };

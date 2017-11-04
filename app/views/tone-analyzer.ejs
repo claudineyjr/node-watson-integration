@@ -23,7 +23,7 @@
 
         <% if(resposta.length > 0) { %>
             <% for(var i = 0; i < resposta.length; i++) { %>
-                <h3><span class="result-label">Tom:</span> <span class="result-data"><%=resposta[i].tone_name%></span> <span class="result-label">Score:</span> <span class="result-data"><%=resposta[i].score%></span></h3>
+                <h3><span class="result-label">Tom:</span> <span class="result-data"><%=resposta[i].tone_name%></span> <span class="result-label">Score:</span> <span class="result-data"><%=resposta[i].score * 100%>%</span></h3>
             <% } %>
         <% } %>
     </div>

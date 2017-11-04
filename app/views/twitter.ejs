@@ -14,6 +14,7 @@
     <div class="col-md-12 main-div">
         <form class="information-input" method="POST" action"/twitter-post">
             <div class="form-group">
+              <input type="hidden" value="postar" name="acao">
               <label for="textToPost">Postar um tweet</label>
               <input type="text" class="form-control" id="textToPost" name="textToPost" placeholder="Digite o texto a postar">
               <small id="emailHelp" class="form-text text-muted">O que quer postar em seu twitter?</small>
@@ -36,11 +37,15 @@
           </div>
         <% } %>
 
-        <% if(resposta.length > 0) { %>
-            <% for(var i = 0; i < resposta.length; i++) { %>
-                <h3><span class="result-label">Tom:</span> <span class="result-data"><%=resposta[i].tone_name%></span> <span class="result-label">Score:</span> <span class="result-data"><%=resposta[i].score%></span></h3>
-            <% } %>
-        <% } %>
+        <form class="information-input" method="POST" action"/twitter-post">
+          <div class="form-group">
+            <input type="hidden" value="listar" name="acao">
+            <label for="textToSearch">Postar um tweet</label>
+            <input type="text" class="form-control" id="textToSearch" name="textToSearch" placeholder="Digite o texto a buscar">
+            <small id="emailHelp" class="form-text text-muted">O que quer buscar no twitter?</small>
+          </div>
+          <button type="submit" class="btn btn-primary">Buscar</button>
+      </form>
     </div>
 </main>
 

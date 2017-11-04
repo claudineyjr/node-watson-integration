@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <% include ./modulos/head %>
+</head>
+
+<body class="container">
+
+<header>
+    <% include ./modulos/header %>
+</header>
+
+<main>
+    <div class="col-md-12 main-div">
+        <% if(resposta.length > 0) { %>
+          <h3><span class="result-label">Resultado:</span><br />
+            <% for(var i = 0; i < resposta.length; i++) { %>
+                <span class="result-label tweets">Usuário: </span><span class="result-data tweets"><%=resposta[i].user.screen_name%></span>
+                <span class="result-label tweets">Tweet: </span><span class="result-data tweets"><%=resposta[i].text%></span><br />
+            <% } %>
+        <% } %>
+    </div>
+</main>
+
+<footer>
+    
+</footer>
+</body>
+</html>
